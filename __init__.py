@@ -94,6 +94,7 @@ from .const import (
     CONF_MIN_TEMP,
     CONF_MIN_VALUE,
     CONF_MSG_WAIT,
+    CONF_SUM_SCALE,
     CONF_NAN_VALUE,
     CONF_PARITY,
     CONF_PRECISION,
@@ -197,6 +198,8 @@ BASE_STRUCT_SCHEMA = BASE_COMPONENT_SCHEMA.extend(
         vol.Optional(CONF_STRUCTURE): cv.string,
         vol.Optional(CONF_SCALE, default=1): vol.Coerce(float),
         vol.Optional(CONF_OFFSET, default=0): vol.Coerce(float),
+        vol.Optional(CONF_MAP): {cv.string: cv.string},
+        vol.Optional(CONF_SUM_SCALE): vol.All(cv.ensure_list, [vol.Coerce(float)]),
         vol.Optional(CONF_PRECISION): cv.positive_int,
         vol.Optional(
             CONF_SWAP,
@@ -371,7 +374,6 @@ SENSOR_SCHEMA = vol.All(
             vol.Optional(CONF_MAX_VALUE): vol.Coerce(float),
             vol.Optional(CONF_NAN_VALUE): nan_validator,
             vol.Optional(CONF_ZERO_SUPPRESS): cv.positive_float,
-            vol.Optional(CONF_MAP): {cv.string: cv.string},
         }
     ),
 )
