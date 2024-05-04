@@ -82,6 +82,8 @@ CONF_VERIFY = "verify"
 CONF_VIRTUAL_COUNT = "virtual_count"
 CONF_WRITE_TYPE = "write_type"
 CONF_ZERO_SUPPRESS = "zero_suppress"
+CONF_MAP = "map"
+CONF_MULTI_SCALE = "multi_scale"
 
 RTUOVERTCP = "rtuovertcp"
 SERIAL = "serial"
@@ -132,8 +134,8 @@ SERVICE_STOP = "stop"
 SERVICE_RESTART = "restart"
 
 # dispatcher signals
-SIGNAL_STOP_ENTITY = "modbus.stop"
-SIGNAL_START_ENTITY = "modbus.start"
+SIGNAL_STOP_ENTITY = "modbus_new.stop"
+SIGNAL_START_ENTITY = "modbus_new.start"
 
 # integration names
 DEFAULT_HUB = "modbus_hub"
@@ -141,7 +143,7 @@ DEFAULT_SCAN_INTERVAL = 15  # seconds
 DEFAULT_SLAVE = 1
 DEFAULT_STRUCTURE_PREFIX = ">f"
 DEFAULT_TEMP_UNIT = "C"
-MODBUS_DOMAIN = "modbus"
+MODBUS_DOMAIN = "modbus_new"
 
 ACTIVE_SCAN_INTERVAL = 2  # limit to force an extra update
 
