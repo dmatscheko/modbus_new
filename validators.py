@@ -469,9 +469,9 @@ def validate_entity(
                     addr,
                     "",
                 ],
-                f"Modbus {hub_name}/{name} address {addr} is duplicate, second entry not loaded!",
+                f"Modbus {hub_name}/{name} address {addr} is duplicate!",
             )
-        return False
+        # return False
     if name in ent_names:
         modbus_create_issue(
             hass,
